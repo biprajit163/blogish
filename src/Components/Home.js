@@ -9,7 +9,6 @@ function Home() {
 
     const {context, setContext} = useContext(UserContext);
 
-    let arr = Array(9)
 
     return (
         <div className="Home">
@@ -17,12 +16,35 @@ function Home() {
             <p>Blogish Api: {context.base_url}</p>
 
             <div className="blogs-container">
-                <BlogCard/>
-                <BlogCard/>
-                <BlogCard/>
-                <BlogCard/>
-                <BlogCard/>
-                <BlogCard/>
+                <div class="row">
+                    <div class="col-md-4">
+                        <BlogCard/>
+                    </div>
+                    <div class="col-md-4">
+                        <BlogCard/>
+                    </div>
+                    <div class="col-md-4">
+                        <BlogCard/>
+                    </div>
+                    <div class="col-md-4">
+                        <BlogCard/>
+                    </div>
+                    <div class="col-md-4">
+                        <BlogCard/>
+                    </div>
+                    <div class="col-md-4">
+                        <BlogCard/>
+                    </div>
+                    <div class="col-md-4">
+                        <BlogCard/>
+                    </div>
+                    <div class="col-md-4">
+                        <BlogCard/>
+                    </div>
+                    <div class="col-md-4">
+                        <BlogCard/>
+                    </div>
+                </div>
             </div>
 
     
