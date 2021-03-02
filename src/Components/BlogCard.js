@@ -1,15 +1,14 @@
 import React from 'react';
 
-function BlogCard() {
+function BlogCard({blogImg, blogTitle}) {
     return (
         <div className="BlogCard">
-            <div class="card">
-                <img class="card-img" 
-                src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg" alt="Blog Image"/>
-
-                <div class="card-body">
-                    <h4 class="card-title">Blog Title</h4>
-                    <p class="card-text">Author</p>
+            <div className="card">
+                <img className="card-img" 
+                src={blogImg} alt="Blog Image"/>
+                <div className="card-body">
+                    <h4 className="card-title">{blogTitle}</h4>
+                    <p className="card-text">Author</p>
                 </div>
             </div>
         </div>

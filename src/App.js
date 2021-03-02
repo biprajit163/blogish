@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Route, Link } from 'react-router-dom'; 
 
 import Home from './Components/Home.js';
+import Signup from './Components/Signup.js';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <header>
         <Link to="/" />
         <Link to="/home"/>
+        <Link to="/signup"/>
       </header>
 
       <main>
@@ -28,6 +30,8 @@ function App() {
             <h1>Welcome To Blogish!</h1>
           );
         }}/>
+
+        <Route path="/signup" component={Signup}/>
 
         <UserContext.Provider value={{ context, setContext }}>
           <Route path="/home" render={() => (

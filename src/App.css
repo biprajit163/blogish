@@ -3,6 +3,9 @@
   text-align: center;
 }
 
+
+/* Home Page ------------------------------------------------------------------ */
+
 .search-button:hover {
   cursor: pointer;
 }
@@ -29,4 +32,27 @@
     width: 100%;
     margin: 10px;
   }
+}
+
+/* Signup Page ------------------------------------------------------------------ */
+
+.Signup {
+  height: 100vh;
+  display: flex;
+}
+
+.signup-container {
+  margin: auto;
+  width: 80%;
+}
+
+.signup-card {
+  background-color: rgba(32, 15, 129, 0.712);
+}
+
+.signup-title {
+  color: whitesmoke;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 600;
 }
