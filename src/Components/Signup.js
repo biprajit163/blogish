@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Route, Link } from 'react-router-dom';
+
 
 function Signup() {
 
@@ -32,10 +34,12 @@ function Signup() {
     const handleUserChange = event => {
         const {id, value} = event.target
 
-        setNewUser(prevState => ({
-            ...prevState,
-            [id]: value,
-        }))
+        setNewUser(prevState => {
+            return({
+                ...prevState,
+                [id]: value,
+            });
+        })
     }
 
     const handlePwdChange = event => {
@@ -43,13 +47,19 @@ function Signup() {
     }
 
     return (
-        <div className="Signup">
+        <div className="Signup d-flex">
             <div className="signup-container">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-md-6">
                         <div className="signup-card card">
                             <div className="card-title text-center">
-                                <h2 className="signup-title">Register</h2>
+                                <h2 className="signup-title">Make An Account</h2>
+                                <p>Already have an account? 
+                                    <Link to="/login" style={{
+                                        textDecoration: "none",
+                                        color: "rgb(116, 158, 33)",
+                                    }}> Login</Link>
+                                </p>
                             </div>
                             <div className="card-body">
                                 <form className="signup-form" onSubmit={handleSubmit}>

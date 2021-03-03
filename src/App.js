@@ -5,13 +5,14 @@ import { Route, Link } from 'react-router-dom';
 
 import Home from './Components/Home.js';
 import Signup from './Components/Signup.js';
+import Login from './Components/Login.js';
 
 
 function App() {
   const base_url = 'https://blogish-api.herokuapp.com'
 
   const [context, setContext] = useState({
-    base_url: 'https://blogish-api.herokuapp.com',
+    base_url: 'http://127.0.0.1:8000',
     user_id: null,
     blog_id: null,
   });
@@ -21,7 +22,6 @@ function App() {
       <header>
         <Link to="/" />
         <Link to="/home"/>
-        <Link to="/signup"/>
       </header>
 
       <main>
@@ -37,6 +37,8 @@ function App() {
           <Route path="/home" render={() => (
             <Home/>
           )}/>
+          
+          <Route path="/login" component={Login}/>
         </UserContext.Provider>
       </main>
     </div>
