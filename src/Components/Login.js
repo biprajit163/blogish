@@ -2,6 +2,7 @@ import React from 'react';
 import { UserContext } from '../UserContext.jsx';
 import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { getCookie, setCookie, eraseCookie } from '../CookieMethods.js';
 import axios from 'axios';
 
 
@@ -25,7 +26,7 @@ function Login() {
                 if(usersArr.some(obj => obj.username === username && obj.password === password)) {
                     usersArr.forEach(obj => {
                         if(obj.username === username && obj.password === password) {
-                            document.cookie = `user_id=${obj.id}`;
+                            setCookie("user_id", obj.id);
                         }
                     });
                 } else {

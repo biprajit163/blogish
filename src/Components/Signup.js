@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../UserContext.jsx';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function Signup() {
@@ -18,8 +18,15 @@ function Signup() {
     const [newUser, setNewUser] = useState(initialState);
     const [pwd, setPwd] = useState("");
 
-    const createUser = () => {
-        axios.post()
+    const {context, setContext} = useContext(UserContext);
+
+
+    function createUser(password, pwd) {
+        if(password === pwd) {
+            axios.post(`${context.base_url}/users`, newUser)
+        } else {
+            alert("Password did not match!")
+        }
     }
 
     const handleSubmit = event => {
@@ -27,11 +34,7 @@ function Signup() {
         console.log(newUser);
         console.log(pwd);
 
-        if(newUser.password === pwd) {
-            console.log(true)
-        } else {
-            console.log(false)
-        }
+        createUser(newUser.password, pwd);
 
         setNewUser(initialState);
         setPwd("");
@@ -96,7 +99,9 @@ function Signup() {
 
                                     <div className="d-flex flex-row align-items-center 
                                     justify-content-between float-right">
-                                        <button className="btn btn-success">Create Account</button>
+                                        <Link to="/profile">
+                                            <button className="btn btn-success">Create Account</button>
+                                        </Link>
                                     </div>
                                 </form>
                             </div>

@@ -6,6 +6,7 @@ import { Route, Link } from 'react-router-dom';
 import Home from './Components/Home.js';
 import Signup from './Components/Signup.js';
 import Login from './Components/Login.js';
+import UserProfile from './Components/UserProfile.js';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Home/>
           )}/>
           
+          <Route path="/profile" component={UserProfile}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/login" component={Login}/>
         </UserContext.Provider>
