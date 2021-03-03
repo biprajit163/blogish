@@ -27,12 +27,6 @@
 }
 
 
-@media only screen and (max-width: 750px) {
-  .BlogCard {
-    width: 100%;
-    margin: 10px;
-  }
-}
 
 /* Signup Page ------------------------------------------------------------------ */
 
@@ -90,8 +84,54 @@
 
 .UserProfile {
   height: 100vh;
+  text-align: center;
+}
+
+.profile-image {
+  margin: 50px;
+}
+
+.profile-image > img {
+  height: 200px;
+  width: 200px;
+}
+
+.profile-image-cover {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 
 
+.user-profile-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.user-profile-container > * {
+  margin: 30px 0;
+}
 
 
+.user-blogs-container {
+  display: inline-block;
+}
+
+
+.profile-button {
+  margin: 50px;
+}
+
+
+/* Media Queries: ---------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 750px) {
+  .BlogCard {
+    width: 100%;
+    margin: 10px;
+  }
+  .user-blogs-container {
+    width: 100%;
+  }
+}
