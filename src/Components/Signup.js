@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { UserContext } from '../UserContext.jsx';
 import { Route, Link } from 'react-router-dom';
 
 
@@ -15,6 +17,10 @@ function Signup() {
 
     const [newUser, setNewUser] = useState(initialState);
     const [pwd, setPwd] = useState("");
+
+    const createUser = () => {
+        axios.post()
+    }
 
     const handleSubmit = event => {
         event.preventDefault();

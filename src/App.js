@@ -13,8 +13,6 @@ function App() {
 
   const [context, setContext] = useState({
     base_url: 'http://127.0.0.1:8000',
-    user_id: null,
-    blog_id: null,
   });
 
   return (
@@ -31,13 +29,13 @@ function App() {
           );
         }}/>
 
-        <Route path="/signup" component={Signup}/>
-
+        
         <UserContext.Provider value={{ context, setContext }}>
           <Route path="/home" render={() => (
             <Home/>
           )}/>
           
+          <Route path="/signup" component={Signup}/>
           <Route path="/login" component={Login}/>
         </UserContext.Provider>
       </main>

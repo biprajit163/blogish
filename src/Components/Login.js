@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 function Login() {
 
     const initialState = {
@@ -21,16 +22,15 @@ function Login() {
             .then(res => {
                 const usersArr = res.data;
 
-                usersArr.some((obj) => {
-                    if(
-                        obj.username === username &&
-                        obj.password === password
-                    ) {
-                        document.cookie = `user_id=${obj.id}`
-                    } else {
-                        alert("Wrong username and password try again!");
-                    }
-                })
+                if(usersArr.some(obj => obj.username === username && obj.password === password)) {
+                    usersArr.forEach(obj => {
+                        if(obj.username === username && obj.password === password) {
+                            document.cookie = `user_id=${obj.id}`;
+                        }
+                    });
+                } else {
+                    alert("Wrong username and password try again!");
+                }
             })
     }
 
@@ -39,6 +39,7 @@ function Login() {
         event.preventDefault();
         getUser(userInfo.username, userInfo.password);
 
+        
         setUserInfo(initialState);
     }
 
@@ -65,7 +66,7 @@ function Login() {
                                     <Link to="/signup" style={{
                                         textDecoration: "none",
                                         color: "rgb(223, 101, 20)",
-                                    }}> Register</Link>
+                                    }}> Sign Up</Link>
                                 </p>
                             </div>
                             <div className="card-body">
