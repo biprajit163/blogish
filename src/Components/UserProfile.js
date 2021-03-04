@@ -5,14 +5,17 @@ import { getCookie, setCookie, eraseCookie } from '../CookieMethods.js';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import UserBlogCard from './UserBlogCard.js';
 import BlogCard from './BlogCard.js';
 
 
 function UserProfile() {
-    // const user_id = getCookie("user_id")
     
     const {context, setContext} = useContext(UserContext);
     const [user, setUser] = useState({});
+    const [userBlogs, setUserBlogs] = useState([]);
+
+
 
     useEffect(() => { 
         const user_id = getCookie("user_id")
@@ -22,6 +25,18 @@ function UserProfile() {
             .then(res => {
                 console.log(res.data);
                 setUser(res.data);
+            })
+
+        axios.get(`${context.base_url}/blogs`)
+            .then(res => {
+                let myBlogs = []
+                for(let i=0; i < res.data.length; i++) {
+                    if(res.data[i].user === Number(user_id)) {
+                        console.log(res.data[i]);
+                        myBlogs.push(res.data[i])
+                    }
+                }
+                setUserBlogs(myBlogs)
             })
 
     }, []);
@@ -95,9 +110,15 @@ function UserProfile() {
                                         </Link>
                                     </div>
                                 </div>
-                                <BlogCard/>
-                                <BlogCard/>
-                                <BlogCard/>
+                                {
+                                    userBlogs.map((blog, i) => {
+                                        return(
+                                            <div className="row" key={i}>
+                                                <UserBlogCard blog={blog} context={context}/>
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { UserContext } from '../UserContext.jsx';
 import { useContext, useEffect, useState } from 'react';
+import { setCookie, getCookie, eraseCookie } from '../CookieMethods.js'
 import * as Icon from 'react-bootstrap-icons';
 import axios from 'axios';
 
@@ -36,7 +37,6 @@ function Home() {
     return (
         <div className="Home">
             <h1>Home Page</h1>
-            <p>Blogish Api: {context.base_url}</p>
             
             <div className="blog-searchbar">
                 <div className="row">
@@ -69,7 +69,7 @@ function Home() {
                         blogs.map((blog, i) => {
                             return(
                                 <div className="col-md-4" key={i}>
-                                    <BlogCard blogImg={blog.image} blogTitle={blog.title} />
+                                    <BlogCard blogImg={blog.image} blogTitle={blog.title}/>
                                 </div>
                             );
                         })
