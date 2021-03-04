@@ -31,8 +31,6 @@ function Signup() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(newUser);
-        console.log(pwd);
 
         createUser(newUser.password, pwd);
 
@@ -99,9 +97,9 @@ function Signup() {
 
                                     <div className="d-flex flex-row align-items-center 
                                     justify-content-between float-right">
-                                        <Link to="/profile">
-                                            <button className="btn btn-success">Create Account</button>
-                                        </Link>
+                                        {/* <Link to="/profile">
+                                        </Link> */}
+                                        <button className="btn btn-success">Create Account</button>
                                     </div>
                                 </form>
                             </div>
