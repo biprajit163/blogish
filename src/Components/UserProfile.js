@@ -17,13 +17,13 @@ function UserProfile() {
 
 
 
+
     useEffect(() => { 
         const user_id = getCookie("user_id")
         console.log(user_id)
         
         axios.get(`${context.base_url}/users/${user_id}`)
             .then(res => {
-                console.log(res.data);
                 setUser(res.data);
             })
 
@@ -32,7 +32,6 @@ function UserProfile() {
                 let myBlogs = []
                 for(let i=0; i < res.data.length; i++) {
                     if(res.data[i].user === Number(user_id)) {
-                        console.log(res.data[i]);
                         myBlogs.push(res.data[i])
                     }
                 }

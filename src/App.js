@@ -8,13 +8,14 @@ import Signup from './Components/Signup.js';
 import Login from './Components/Login.js';
 import UserProfile from './Components/UserProfile.js';
 import BlogEditor from './Components/BlogEditor.js';
+import UpdateUserBlog from './Components/UpdateUserBlog.js';
+
 
 
 function App() {
-  const base_url = 'https://blogish-api.herokuapp.com'
 
   const [context, setContext] = useState({
-    base_url: 'http://127.0.0.1:8000',
+    base_url: 'https://blogish-api.herokuapp.com',
   });
 
   return (
@@ -35,6 +36,10 @@ function App() {
         <UserContext.Provider value={{ context, setContext }}>
           <Route path="/home" render={() => (
             <Home/>
+          )}/>
+
+          <Route exact path="/update_blog/:id" render={(routerProps) => (
+            <UpdateUserBlog match={routerProps.match}/>
           )}/>
 
           <Route path="/make_blog" component={BlogEditor}/>
