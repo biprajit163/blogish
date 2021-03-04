@@ -1,4 +1,10 @@
 
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+
 .App {
   text-align: center;
 }
@@ -122,6 +128,33 @@
 .profile-button {
   margin: 50px;
 }
+
+
+/* BlogEditor page: ---------------------------------------------------------------------------- */
+
+.BlogEditor {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.EditorResult {
+  width: 100%;
+  height: 100%;
+}
+
+.blog-features {
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
 
 
 /* Media Queries: ---------------------------------------------------------------------------- */

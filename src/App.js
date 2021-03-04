@@ -7,6 +7,7 @@ import Home from './Components/Home.js';
 import Signup from './Components/Signup.js';
 import Login from './Components/Login.js';
 import UserProfile from './Components/UserProfile.js';
+import BlogEditor from './Components/BlogEditor.js';
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
           <Route path="/home" render={() => (
             <Home/>
           )}/>
+
+          <Route path="/make_blog" component={BlogEditor}/>
           
           <Route path="/profile" component={UserProfile}/>
           <Route path="/signup" component={Signup}/>
