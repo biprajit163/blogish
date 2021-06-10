@@ -1,6 +1,10 @@
 # Blogish 
 The Blogish Application is a Full stack application that uses Django Rest Framework for the backend and React.js for the front end. This app can be used on your computer or on your mobile, here is a deployed version of the app on heroku https://bips-blogish.herokuapp.com. This is not the finished product of this app, this is a beta version that tests if a user can make an account on this app and start posting blogs to the apps backend. Blogish is meant to be a Blogging application like Wix, squarespace, and tumbler. The minimum functionality of this app if for the user to be able to create an account and post their blogs there. Later on I will work on accessing each blogs and adding extra functionality like sharing the blog on other platforms and user authentication so the users password can be save.
 
+### Blogish API
+> Link to the backend API that the blogish app uses. It is created with Django
+- Link = https://github.com/biprajit163/blogish-api
+
 ### Technologies used
 - React routers
 - React markdown 
